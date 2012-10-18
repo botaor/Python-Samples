@@ -17,7 +17,7 @@ Just do the following:
 >\>\>\>help( '&lt;module>' )  
 >\>\>\>help( '&lt;module>.&lt;function>' )
 
-Some module might have other dependencies. If this is the case, then it is clearly marked in the documentation string of the module.
+Some modules might have other dependencies. If this is the case, then it is clearly marked in the documentation string of the module.
 
 The file 'Template.py' is just what I use to start a new module. It has no real use by itself.
 
