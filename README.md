@@ -20,9 +20,9 @@ Just do the following:
 
 Some modules might have other dependencies. If this is the case, then it is clearly marked in the documentation string of the module.
 
-The file `'Template.py'` is just what I use to start a new module. It has no real use by itself.
+The file `Template.py` is just what I use to start a new module. It has no real use by itself.
 
-Some modules need sample files to show their purpose. All these sample files are kept in the `'Samples'` directory.
+Some modules need sample files to show their purpose. All these sample files are kept in the `Samples` directory.
 
 ## Environment ##
 Unless otherwise specified all example code is for Python 2.7.
