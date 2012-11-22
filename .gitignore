@@ -3,3 +3,6 @@
 
 # Markdown export file
 readme.html
+
+#output files for the examples
+out*.*
