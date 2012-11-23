@@ -25,7 +25,7 @@ def CallShellNoOutput( cmd ):
   out = ""
   try:
     out = subprocess.check_output( cmd, shell=True )
-  except subprocess.CalledProcessError, e:
+  except subprocess.CalledProcessError as e:
     rc = e.returncode
     out = e.output
     
