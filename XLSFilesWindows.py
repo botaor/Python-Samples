@@ -20,7 +20,7 @@ class XLSFile:
     try:
       self.excel = Dispatch('Excel.Application')
     except:
-      raise Exception( "Could not open version control XFS file" )
+      raise Exception( "Could not open excel object" )
 
   def Visible( self, show ):    
     "To show or hide the excel application window"  
