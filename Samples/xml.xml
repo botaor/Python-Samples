@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    XML Sample file
+-->
+<submodules>
+    <identification>
+        <name>My Project</name>
+        <version>0.50</version>
+    </identification>
+    
+    <module id="Lib one">
+        <version>0.05</version>
+        <copyFiles>
+            <dir id="inc" wildcard="*.h">.</dir>
+            <dir id="lib" wildcard="*.lib">.</dir>
+            <dir id="bin" wildcard="*.dll">.</dir>
+            <dir id="bin" wildcard="*.exe">.</dir>
+        </copyFiles>
+    </module>
+
+    <module id="Lib two">
+        <copyFiles>
+            <dir id="inc" wildcard="*.h">inc</dir>
+            <dir id="lib">lib</dir>
+            <dir id="bin">dll</dir>
+        </copyFiles>
+    </module>
+</submodules>
