@@ -1,0 +1,29 @@
+<NotepadPlus>
+    <Project name="Python Samples">
+        <Folder name="Samples">
+            <File name="Samples\README.md" />
+            <File name="Samples\text.txt" />
+            <File name="Samples\textUTF8.txt" />
+            <File name="Samples\textWin.txt" />
+            <File name="Samples\xls1.xls" />
+            <File name="Samples\xls2.xls" />
+            <File name="Samples\xml.xml" />
+        </Folder>
+        <File name=".gitignore" />
+        <File name="Exceptions.py" />
+        <File name="ListsDicts.py" />
+        <File name="Main.py" />
+        <File name="out.txt" />
+        <File name="outunicode.txt" />
+        <File name="Process.py" />
+        <File name="README.md" />
+        <File name="regex.py" />
+        <File name="Template.py" />
+        <File name="TextFiles.py" />
+        <File name="Unicode.py" />
+        <File name="Workspace" />
+        <File name="XLSFiles.py" />
+        <File name="XLSFilesWindows.py" />
+        <File name="XML.py" />
+    </Project>
+</NotepadPlus>
