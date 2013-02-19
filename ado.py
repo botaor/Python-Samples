@@ -2,6 +2,8 @@
 # -*- coding: latin-1 -*-
 """Module to show the usage of ADO in Windows. Good to access MSAccess databases...
 
+This module depends on the pywin32 module.
+
 Be carefull with 64 bit systems. Normally odbc drivers are only 32 bits. So you might need to install python 32 bits. 
 
 If you already have python 64 bits installed, there is no problem. Install the 32 bits version in a 
