@@ -19,7 +19,7 @@ def perfect_square( arg ):
 
 def main():
   "The main function called when the utility is run."
-  parser = argparse.ArgumentParser(description="Examples of argparse usage")  
+  parser = argparse.ArgumentParser(description="Examples of argparse usage", epilog="With a message at the end" )  
 
   # Simple argument that must always be present
   parser.add_argument( "echo", help="echo the string you use here" )
@@ -52,6 +52,16 @@ def main():
   # An option that is validated by a user function
   parser.add_argument( "-p", "--perfect_square", help="A perfect square", type=perfect_square )
 
+  # Two mutually exclusive options
+  group = parser.add_mutually_exclusive_group()
+  group.add_argument("-x1", "--exone", action="store_false" )
+  group.add_argument("-x2", "--extwo", action="store_true" )
+
+  # Two mutually exclusive options that are mandatory
+  group = parser.add_mutually_exclusive_group( required=True )
+  group.add_argument("-x10", "--exten", action="store_false" )
+  group.add_argument("-x20", "--extwenty", action="store_true" )
+
   args = parser.parse_args()
 
   print( 'argparse test' )
@@ -68,6 +78,8 @@ def main():
   print( "Value   is", args.value )
   print( "Counts are", args.count )
   print( "Words  are", args.words )
+  print( "Exclusive one/two:", args.exone, args.extwo )
+  print( "Exclusive required one/two:", args.exten, args.extwenty )
   
   return 0
   
