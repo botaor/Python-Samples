@@ -65,6 +65,12 @@ def main():
   for item in result:
     print( unicode( item[0] ) )
 
+  print()
+  
+  result = db.ExecuteSQL( "SELECT description AS d, code AS c FROM Types order by description" )
+  for item in result:
+    print( unicode( item['c'] ), '->', unicode( item['d'] ) )
+    
   db.Close()
 
   return 0
