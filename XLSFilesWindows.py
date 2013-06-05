@@ -32,6 +32,13 @@ class XLSFile:
     self.workbook = self.excel.Workbooks.Open( os.path.abspath( filename ) )
     self.ActivateSheet( sheetname )
     
+  def OpenSimple( self, filename, sheetname ):    
+    "Open the file as read only and only for simple usage. Some other functions may fail..."  
+    # filename must be a complete path
+    self.workbook = self.excel.Workbooks.Open( os.path.abspath( filename ), False, True )
+    self.sheet = self.workbook.Sheets( sheetname )
+    self.sheet.Activate()
+
   def Close( self ):
     "Close the currently opened workbook"  
     self.workbook.Close(SaveChanges=0) #to avoid prompt
@@ -46,6 +53,10 @@ class XLSFile:
     except:
       raise Exception( "Could not close Excel properly (maybe running this script as administrator?). Please close it." )
 
+  def PrintPDF( self, pdfName ):
+    "Print current sheet to a PDF file"
+    self.sheet.ExportAsFixedFormat( 0, os.path.abspath( pdfName ) )
+      
   def Save( self ):
     "Save currently opened workbook"
     self.workbook.Save()
@@ -84,6 +95,12 @@ def main():
 
   #Create the excel object
   xls = XLSFile()
+
+  xls.OpenSimple( r"Samples\xls2.xls", "Sheet1" )
+  # Save as PDF
+  xls.PrintPDF( r"Samples\xx.pdf" )
+  #Close the workbook
+  xls.Close()
   
   #open a workbook
   xls.Open( r"Samples\xls2.xls", "Sheet1" )
