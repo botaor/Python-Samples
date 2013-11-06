@@ -29,7 +29,7 @@ class XLSFile:
 
   def ActivateSheet( self, sheet ):
     "Select and activate a sheet by name or by index"  
-    if isinstance( sheet, str ):
+    if isinstance( sheet, str ) or isinstance( sheet, unicode ):
       self.sheet = self.workbook.sheet_by_name( sheet )
     else:
       self.sheet = self.workbook.sheet_by_index( sheet )
