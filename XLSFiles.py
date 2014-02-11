@@ -17,6 +17,16 @@ class XLSFile:
   def __init__( self ):
     "Constructor"  
 
+    # Constants for cell value types    
+    self.XLS_TYPE_EMPTY  = 0
+    self.XLS_TYPE_TEXT   = 1
+    self.XLS_TYPE_NUMBER = 2
+    self.XLS_TYPE_DATE   = 3
+    self.XLS_TYPE_BOOL   = 4
+    self.XLS_TYPE_ERROR  = 5
+    self.XLS_TYPE_BLANK  = 6
+
+
   def Open( self, filename, sheet ):    
     "To actually open the file and select one worksheet (by name or number)"  
     self.workbook = xlrd.open_workbook( filename )
@@ -55,6 +65,10 @@ class XLSFile:
     v = self.sheet.cell_value( row, col )
     return v
 
+  def CellType( self, row, col ):
+    "Read the type of the value of a cell (coordinates are zero based) (XLS_TYPE_*)"
+    return self.sheet.cell( row, col ).ctype
+
 
 def main():
   "The main function called when the utility is run."
@@ -71,6 +85,11 @@ def main():
   
   #get a value
   print( "B4", xls.ReadCell( 3, 1 ) )
+
+  print( "Type of B3 is", xls.CellType( 2, 1 ) )
+  print( "Type of B4 is", xls.CellType( 3, 1 ) )
+  print( "Type of F4 is", xls.CellType( 3, 5 ) )
+
 
   #Close the workbook
   xls.Close()
