@@ -34,6 +34,9 @@ def SpliFileName( filename ):
   (name, ext) = os.path.splitext( os.path.basename( filename ) )  
   print( "split   :", name, ext )
   
+def CheckIfExists( fname ):
+  print( "File", fname, "Exists" if os.path.isfile( fname ) else "does NOT exist" )
+  
 
 def main():
   "The main function called when the utility is run."
@@ -49,6 +52,9 @@ def main():
   SpliFileName( "Samples/file.ext" )
   print()
   SpliFileName( "file.ext" )
+  print()
+  CheckIfExists( "Samples/text.txt" )
+  CheckIfExists( "Samples/nofile.ext" )
 
   return 0
   
