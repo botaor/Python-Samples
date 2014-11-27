@@ -23,13 +23,6 @@ class Person( object ):
   def Age( self, newAge ):
     self.__age = newAge
     
-  def Populatetags( self, all_tags ):
-    for t in self.tags:
-      if t in all_tags:
-        all_tags[t] += 1 ;      
-      else:
-        all_tags[t] = 1 ;
-  
   def __str__( self ):
     return self.__name + " (" + str(self.__age) + " years old)"
     
