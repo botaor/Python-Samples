@@ -7,16 +7,21 @@ from __future__ import print_function
 
 import sys
 
-class Person:
+class Person( object ):
   def __init__( self, name, age ):
-    self.name = name
-    self.age = age
+    self.__name = name
+    self.__age = age
 
   def IsAdult( self ):
-    return self.age >= 18
+    return self.__age >= 18
     
-  def ChangeAge( self, newAge ):
-    self.age = newAge
+  @property  
+  def Age( self ):
+    return self.__age
+    
+  @Age.setter  
+  def Age( self, newAge ):
+    self.__age = newAge
     
   def Populatetags( self, all_tags ):
     for t in self.tags:
@@ -26,7 +31,7 @@ class Person:
         all_tags[t] = 1 ;
   
   def __str__( self ):
-    return self.name + " (" + str(self.age) + " years old)"
+    return self.__name + " (" + str(self.__age) + " years old)"
     
   def __repr__( self ):
     return self.__str__()
@@ -41,7 +46,7 @@ def main():
   
   p = Person( "John", 21 )
   print( "Is John an adult?", p.IsAdult() )
-  p.ChangeAge( 4 )
+  p.Age = 4
   print( "Change the age:", p )
   print( "Is John an adult?", p.IsAdult() )
 
