@@ -10,7 +10,7 @@ import sys
 class Person( object ):
   def __init__( self, name, sex, age ):
     self.__name = name
-    self.__sex = sex
+    self._sex = sex         # protected member
     self.__age = age
 
   def IsAdult( self ):
@@ -43,8 +43,12 @@ class Man( Person ):
       
     return Person.IsAdult( self )
     
+  @staticmethod
+  def Create( name, age ):
+    return Man( name, age )
+    
   def __str__( self ):
-    return "Man - " + Person.__str__( self )
+    return "Man - (" + self._sex + ") " + Person.__str__( self )
 
     
 def main():
@@ -65,6 +69,11 @@ def main():
   p = Man( "John", 156 )
   print( "p =", p )
   print( "Is John an adult?", p.IsAdult() )
+
+  print()
+  
+  p = Man.Create( "William", 15 )
+  print( "p =", p )
   
   return 0
   
