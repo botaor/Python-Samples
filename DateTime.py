@@ -31,6 +31,8 @@ def main():
   print()
   
   print( "five days from now:", datetime.date.today() + datetime.timedelta(days=5) )
+  print( "Add time to date:", datetime.datetime.strptime( "09 10 2011 15:16:17", "%d %m %Y %H:%M:%S" ) + datetime.timedelta( hours=2, minutes=30 ) )
+  print( "Count number of seconds:", time.strptime( "01:10:10", "%H:%M:%S" ).total_seconds() )
   print()
 
   dt = datetime.datetime.now()
