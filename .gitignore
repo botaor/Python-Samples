@@ -6,3 +6,6 @@ readme.html
 
 #output files for the examples
 out*.*
+
+#backupinfo files
+.backupinfo.xml
