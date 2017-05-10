@@ -30,7 +30,7 @@ Unless otherwise specified all example code is for Python 2.7.
 All testing is done in Windows, but it should work just as well in other operating systems. Modules that are known to only work in windows, are marked as such in the documentation string.
 
 ## Licensing ##
-This is all Free. Use and distribute as you see fit.
+This code is distributed under the [MIT][mit] license. See the [LICENSE][license] file in the root of this repository.
 
 ## Contacts ##
 Contact the developer at: [rui@ruibotao.com][rui]
@@ -41,3 +41,6 @@ Developed by Rui Botão (computer programmer and enthusiast orienteer).
 
 [rui]: mailto:rui@ruibotao.com "Rui"
 [py]:  http://www.python.org/  "Python"
+[mit]:  https://opensource.org/licenses/MIT/  "MIT"
+[license]: LICENSE "LICENSE"
+
