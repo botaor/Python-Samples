@@ -15,6 +15,7 @@ def main():
   
   print( "Now:", datetime.date.today() )
   print( "Now:", datetime.datetime.today() )
+
   print( "Now:", datetime.datetime.time( datetime.datetime.today() ) )
   print()
   
@@ -28,11 +29,13 @@ def main():
   print()
 
   print( "Formatted string:", datetime.datetime.today().strftime( "%Y.%m.%d %H:%M:%S" ) )
+  print( "Formatted string:", datetime.datetime.today().strftime( "%a, %d %b %Y %H:%M:%S GMT" ) )
   print()
   
   print( "five days from now:", datetime.date.today() + datetime.timedelta(days=5) )
   print( "Add time to date:", datetime.datetime.strptime( "09 10 2011 15:16:17", "%d %m %Y %H:%M:%S" ) + datetime.timedelta( hours=2, minutes=30 ) )
-  print( "Count number of seconds:", time.strptime( "01:10:10", "%H:%M:%S" ).total_seconds() )
+  t = datetime.datetime.strptime( "01:10:10", "%H:%M:%S" )
+  print( "Count number of seconds:", datetime.timedelta( hours=t.hour, minutes=t.minute, seconds=t.second ).total_seconds() )
   print()
 
   dt = datetime.datetime.now()
